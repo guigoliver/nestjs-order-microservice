@@ -10,11 +10,13 @@ import { Product } from './products/entities/product.entity';
   imports: [ TypeOrmModule.forRoot({
     type: 'mysql',
     host: 'localhost',
-    port: 3306,
+    port: 3308,
     username: 'root',
     password: 'root',
     database: 'nest',
     entities: [Product],
+    synchronize: true,
+    logging: true,
   }), ProductsModule],
   controllers: [AppController], // MVC
   providers: [AppService], //Negócio, camada de serviços
