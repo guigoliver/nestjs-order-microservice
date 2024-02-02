@@ -8,6 +8,7 @@ import { Product } from './products/entities/product.entity';
 import { OrdersModule } from './orders/orders.module';
 import { Order } from './orders/entities/order.entity';
 import { AuthModule } from './auth/auth.module';
+import { RabbitmqModule } from './rabbitmq/rabbitmq.module';
 
 //Decorator
 @Module({
@@ -21,7 +22,7 @@ import { AuthModule } from './auth/auth.module';
     entities: [Product, Order, OrderItem],
     synchronize: true,
     logging: true,
-  }), ProductsModule, OrdersModule, AuthModule],
+  }), ProductsModule, OrdersModule, AuthModule, RabbitmqModule],
   controllers: [AppController], // MVC
   providers: [AppService], //Negócio, camada de serviços
 })
